@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var socket = new WebSocket("ws://" + "127.0.0.1:8000");
+        function llll() {
+
+        socket.onmessage = function(e) {
+            var re=JSON.parse(e.data);
+            var msg=re.msg;
+            var fromid=re.fromid;
+            var newstr=document.getElementById('p1111').innerHTML+"\n"+fromid+':'+msg;
+            document.getElementById('p1111').innerHTML=newstr;
+        }
+        socket.onopen = function() {
+            var sssss={
+                "msg": '',
+                "id":'321',
+                "toid":'first'};
+                socket.send(JSON.stringify(sssss));
+        }
+// Call onopen directly if socket is already open
+        if (socket.readyState == WebSocket.OPEN)
+	        socket.onopen();
+        }
+        function sss() {
+            var tttt=document.getElementById('inppp').value;
+            document.getElementById('inppp').value="";
+            var sssss={
+                "msg":tttt,
+                "id":'321',
+                "toid":'123'};
+
+                socket.send(JSON.stringify(sssss));
+        }
+
+    </script>
+</head>
+<body onload="llll()">
+<form>
+    <p1 id="p1111">1111</p1>
+    <input type="text" name="firstname" id="inppp">
+    <button type="button" onclick="sss()">send</button>
+
+</form>
+
+</body>
+</html>
