@@ -25,7 +25,7 @@ SECRET_KEY = '-z5)(-f*i(4bscj7+nk0^ko&o6b!990i7(cwd2s29^(mi$t6(='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['a002.sh.1254370337.clb.myqcloud.com','118.89.146.122',]
 
 
 # Application definition
